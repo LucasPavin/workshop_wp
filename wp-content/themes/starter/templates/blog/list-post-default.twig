@@ -1,0 +1,37 @@
+{% set link = post.get_field('external_link')['url'] %}
+{% set target = post.get_field('external_link')['target'] %}
+{% set is_external = true %}
+
+{% if post.get_field('internal') %}
+    {% set link = post.link %}
+    {% set target = post.target %}
+    {% set is_external = false %}
+{% endif %}
+
+<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+    <header class="entry-header">
+        <div class="content-img">
+            <a href="{{ link }}" target="{{ target }}">
+                {% if post.thumbnail %}
+                    {{ gk_image(post.thumbnail.src, post.title, '', true, "640px") }}
+                {% else %}
+                    {{ gk_image(parent.assets ~ 'images/no-picture.jpg', post.title, '', true, "640px") }}
+                {% endif %}
+            </a>
+        </div>
+    </header>
+
+    <div class="entry-summary">
+        {% include 'blog/meta.twig' %}
+
+        <h3 class="entry-title"><a href="{{ link }}" target="{{ target }}">{{ post.title }}</a></h3>
+        {# {{ post.preview.length(20).read_more(false) }} #}
+
+        <div class="desc">
+            {{ post.content | striptags | slice(0, 75) }} [...]
+        </div>
+
+
+        {# <a href="{{ link }}" target="{{ target }}" class="button underline black">{{ __('Lire la suite', 'gosselink') }}</a> #}
+    </div>
+</article>

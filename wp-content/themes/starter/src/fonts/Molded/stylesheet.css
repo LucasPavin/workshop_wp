@@ -1,0 +1,351 @@
+@font-face {
+    font-family: 'Molde Expanded';
+    src: url('Molde-Expanded-Black.eot');
+    src: local('Molde Expanded Black'), local('Molde-Expanded-Black'),
+        url('Molde-Expanded-Black.eot?#iefix') format('embedded-opentype'),
+        url('Molde-Expanded-Black.woff2') format('woff2'),
+        url('Molde-Expanded-Black.woff') format('woff'),
+        url('Molde-Expanded-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Molde Expanded';
+    src: url('Molde-Expanded-Light.eot');
+    src: local('Molde Expanded Light'), local('Molde-Expanded-Light'),
+        url('Molde-Expanded-Light.eot?#iefix') format('embedded-opentype'),
+        url('Molde-Expanded-Light.woff2') format('woff2'),
+        url('Molde-Expanded-Light.woff') format('woff'),
+        url('Molde-Expanded-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Molde Expanded Reverse';
+    src: url('Molde-Expanded-RegularReverse.eot');
+    src: local('Molde Expanded Reverse'), local('Molde-Expanded-RegularReverse'),
+        url('Molde-Expanded-RegularReverse.eot?#iefix') format('embedded-opentype'),
+        url('Molde-Expanded-RegularReverse.woff2') format('woff2'),
+        url('Molde-Expanded-RegularReverse.woff') format('woff'),
+        url('Molde-Expanded-RegularReverse.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Molde Expanded';
+    src: url('Molde-Expanded-RegularItalic.eot');
+    src: local('Molde Expanded Italic'), local('Molde-Expanded-RegularItalic'),
+        url('Molde-Expanded-RegularItalic.eot?#iefix') format('embedded-opentype'),
+        url('Molde-Expanded-RegularItalic.woff2') format('woff2'),
+        url('Molde-Expanded-RegularItalic.woff') format('woff'),
+        url('Molde-Expanded-RegularItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Molde Expanded';
+    src: url('Molde-Expanded-BlackItalic.eot');
+    src: local('Molde Expanded Black Italic'), local('Molde-Expanded-BlackItalic'),
+        url('Molde-Expanded-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('Molde-Expanded-BlackItalic.woff2') format('woff2'),
+        url('Molde-Expanded-BlackItalic.woff') format('woff'),
+        url('Molde-Expanded-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Molde Expanded';
+    src: url('Molde-Expanded-BoldItalic.eot');
+    src: local('Molde Expanded Bold Italic'), local('Molde-Expanded-BoldItalic'),
+        url('Molde-Expanded-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('Molde-Expanded-BoldItalic.woff2') format('woff2'),
+        url('Molde-Expanded-BoldItalic.woff') format('woff'),
+        url('Molde-Expanded-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Molde Expanded Heavy Reverse';
+    src: url('Molde-Expanded-HeavyReverse.eot');
+    src: local('Molde Expanded Heavy Reverse'), local('Molde-Expanded-HeavyReverse'),
+        url('Molde-Expanded-HeavyReverse.eot?#iefix') format('embedded-opentype'),
+        url('Molde-Expanded-HeavyReverse.woff2') format('woff2'),
+        url('Molde-Expanded-HeavyReverse.woff') format('woff'),
+        url('Molde-Expanded-HeavyReverse.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Molde Expanded';
+    src: url('Molde-Expanded-Bold.eot');
+    src: local('Molde Expanded Bold'), local('Molde-Expanded-Bold'),
+        url('Molde-Expanded-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Molde-Expanded-Bold.woff2') format('woff2'),
+        url('Molde-Expanded-Bold.woff') format('woff'),
+        url('Molde-Expanded-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Molde Expanded';
+    src: url('Molde-Expanded-Heavy.eot');
+    src: local('Molde Expanded Heavy'), local('Molde-Expanded-Heavy'),
+        url('Molde-Expanded-Heavy.eot?#iefix') format('embedded-opentype'),
+        url('Molde-Expanded-Heavy.woff2') format('woff2'),
+        url('Molde-Expanded-Heavy.woff') format('woff'),
+        url('Molde-Expanded-Heavy.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Molde Expanded Light Reverse';
+    src: url('Molde-Expanded-LightReverse.eot');
+    src: local('Molde Expanded Light Reverse'), local('Molde-Expanded-LightReverse'),
+        url('Molde-Expanded-LightReverse.eot?#iefix') format('embedded-opentype'),
+        url('Molde-Expanded-LightReverse.woff2') format('woff2'),
+        url('Molde-Expanded-LightReverse.woff') format('woff'),
+        url('Molde-Expanded-LightReverse.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Molde Expanded';
+    src: url('Molde-Expanded-HeavyItalic.eot');
+    src: local('Molde Expanded Heavy Italic'), local('Molde-Expanded-HeavyItalic'),
+        url('Molde-Expanded-HeavyItalic.eot?#iefix') format('embedded-opentype'),
+        url('Molde-Expanded-HeavyItalic.woff2') format('woff2'),
+        url('Molde-Expanded-HeavyItalic.woff') format('woff'),
+        url('Molde-Expanded-HeavyItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Molde Expanded Black Reverse';
+    src: url('Molde-Expanded-BlackReverse.eot');
+    src: local('Molde Expanded Black Reverse'), local('Molde-Expanded-BlackReverse'),
+        url('Molde-Expanded-BlackReverse.eot?#iefix') format('embedded-opentype'),
+        url('Molde-Expanded-BlackReverse.woff2') format('woff2'),
+        url('Molde-Expanded-BlackReverse.woff') format('woff'),
+        url('Molde-Expanded-BlackReverse.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Molde Expanded';
+    src: url('Molde-Expanded-Medium.eot');
+    src: local('Molde Expanded Medium'), local('Molde-Expanded-Medium'),
+        url('Molde-Expanded-Medium.eot?#iefix') format('embedded-opentype'),
+        url('Molde-Expanded-Medium.woff2') format('woff2'),
+        url('Molde-Expanded-Medium.woff') format('woff'),
+        url('Molde-Expanded-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Molde Expanded Bold Reverse';
+    src: url('Molde-Expanded-BoldReverse.eot');
+    src: local('Molde Expanded Bold Reverse'), local('Molde-Expanded-BoldReverse'),
+        url('Molde-Expanded-BoldReverse.eot?#iefix') format('embedded-opentype'),
+        url('Molde-Expanded-BoldReverse.woff2') format('woff2'),
+        url('Molde-Expanded-BoldReverse.woff') format('woff'),
+        url('Molde-Expanded-BoldReverse.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Molde Expanded';
+    src: url('Molde-Expanded-LightItalic.eot');
+    src: local('Molde Expanded Light Italic'), local('Molde-Expanded-LightItalic'),
+        url('Molde-Expanded-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('Molde-Expanded-LightItalic.woff2') format('woff2'),
+        url('Molde-Expanded-LightItalic.woff') format('woff'),
+        url('Molde-Expanded-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Molde Expanded Medium Reverse';
+    src: url('Molde-Expanded-MediumReverse.eot');
+    src: local('Molde Expanded Medium Reverse'), local('Molde-Expanded-MediumReverse'),
+        url('Molde-Expanded-MediumReverse.eot?#iefix') format('embedded-opentype'),
+        url('Molde-Expanded-MediumReverse.woff2') format('woff2'),
+        url('Molde-Expanded-MediumReverse.woff') format('woff'),
+        url('Molde-Expanded-MediumReverse.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Molde Expanded';
+    src: url('Molde-Expanded-SemiboldItalic.eot');
+    src: local('Molde Expanded Semibold Italic'), local('Molde-Expanded-SemiboldItalic'),
+        url('Molde-Expanded-SemiboldItalic.eot?#iefix') format('embedded-opentype'),
+        url('Molde-Expanded-SemiboldItalic.woff2') format('woff2'),
+        url('Molde-Expanded-SemiboldItalic.woff') format('woff'),
+        url('Molde-Expanded-SemiboldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Molde Expanded';
+    src: url('Molde-Expanded-MediumItalic.eot');
+    src: local('Molde Expanded Medium Italic'), local('Molde-Expanded-MediumItalic'),
+        url('Molde-Expanded-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('Molde-Expanded-MediumItalic.woff2') format('woff2'),
+        url('Molde-Expanded-MediumItalic.woff') format('woff'),
+        url('Molde-Expanded-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Molde Expanded';
+    src: url('Molde-Expanded-UltralightItalic.eot');
+    src: local('Molde Expanded Ultralight Italic'), local('Molde-Expanded-UltralightItalic'),
+        url('Molde-Expanded-UltralightItalic.eot?#iefix') format('embedded-opentype'),
+        url('Molde-Expanded-UltralightItalic.woff2') format('woff2'),
+        url('Molde-Expanded-UltralightItalic.woff') format('woff'),
+        url('Molde-Expanded-UltralightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Molde Expanded Ultralight Reverse';
+    src: url('Molde-Expanded-UltralightReverse.eot');
+    src: local('Molde Expanded Ultralight Reverse'), local('Molde-Expanded-UltralightReverse'),
+        url('Molde-Expanded-UltralightReverse.eot?#iefix') format('embedded-opentype'),
+        url('Molde-Expanded-UltralightReverse.woff2') format('woff2'),
+        url('Molde-Expanded-UltralightReverse.woff') format('woff'),
+        url('Molde-Expanded-UltralightReverse.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Molde Expanded Semibold Reverse';
+    src: url('Molde-Expanded-SemiboldReverse.eot');
+    src: local('Molde Expanded Semibold Reverse'), local('Molde-Expanded-SemiboldReverse'),
+        url('Molde-Expanded-SemiboldReverse.eot?#iefix') format('embedded-opentype'),
+        url('Molde-Expanded-SemiboldReverse.woff2') format('woff2'),
+        url('Molde-Expanded-SemiboldReverse.woff') format('woff'),
+        url('Molde-Expanded-SemiboldReverse.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Molde Expanded';
+    src: url('Molde-Expanded-Regular.eot');
+    src: local('Molde Expanded'), local('Molde-Expanded-Regular'),
+        url('Molde-Expanded-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Molde-Expanded-Regular.woff2') format('woff2'),
+        url('Molde-Expanded-Regular.woff') format('woff'),
+        url('Molde-Expanded-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Molde Expanded';
+    src: url('Molde-Expanded-Semibold.eot');
+    src: local('Molde Expanded Semibold'), local('Molde-Expanded-Semibold'),
+        url('Molde-Expanded-Semibold.eot?#iefix') format('embedded-opentype'),
+        url('Molde-Expanded-Semibold.woff2') format('woff2'),
+        url('Molde-Expanded-Semibold.woff') format('woff'),
+        url('Molde-Expanded-Semibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Molde Expanded Thin Reverse';
+    src: url('Molde-Expanded-ThinReverse.eot');
+    src: local('Molde Expanded Thin Reverse'), local('Molde-Expanded-ThinReverse'),
+        url('Molde-Expanded-ThinReverse.eot?#iefix') format('embedded-opentype'),
+        url('Molde-Expanded-ThinReverse.woff2') format('woff2'),
+        url('Molde-Expanded-ThinReverse.woff') format('woff'),
+        url('Molde-Expanded-ThinReverse.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Molde Expanded';
+    src: url('Molde-Expanded-Ultralight.eot');
+    src: local('Molde Expanded Ultralight'), local('Molde-Expanded-Ultralight'),
+        url('Molde-Expanded-Ultralight.eot?#iefix') format('embedded-opentype'),
+        url('Molde-Expanded-Ultralight.woff2') format('woff2'),
+        url('Molde-Expanded-Ultralight.woff') format('woff'),
+        url('Molde-Expanded-Ultralight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Molde Expanded';
+    src: url('Molde-Expanded-ThinItalic.eot');
+    src: local('Molde Expanded Thin Italic'), local('Molde-Expanded-ThinItalic'),
+        url('Molde-Expanded-ThinItalic.eot?#iefix') format('embedded-opentype'),
+        url('Molde-Expanded-ThinItalic.woff2') format('woff2'),
+        url('Molde-Expanded-ThinItalic.woff') format('woff'),
+        url('Molde-Expanded-ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Molde Expanded';
+    src: url('Molde-Expanded-Thin.eot');
+    src: local('Molde Expanded Thin'), local('Molde-Expanded-Thin'),
+        url('Molde-Expanded-Thin.eot?#iefix') format('embedded-opentype'),
+        url('Molde-Expanded-Thin.woff2') format('woff2'),
+        url('Molde-Expanded-Thin.woff') format('woff'),
+        url('Molde-Expanded-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+

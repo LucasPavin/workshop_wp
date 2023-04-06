@@ -1,0 +1,60 @@
+{% set choice_slider = function('get_field', 'choice') %}
+{% set vimeo_slider = function('get_field', 'vimeo') %}
+{% set youtube_slider = function('get_field', 'youtube') %}
+{% set image_slider = function('get_field', 'home_slider') %}
+
+<div class="home-slider">
+    {% if choice_slider == 'vimeo' %}
+        <div class="vimeo-wrapper">
+            <iframe src="https://player.vimeo.com/video/{{ vimeo_slider }}?background=1&autoplay=1&loop=1&byline=0&title=0&quality=720"
+                    frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </div>
+    {% elseif choice_slider == 'youtube' %}
+        <div class="vimeo-wrapper">
+            <iframe type="text/html" allow="autoplay"
+                    src="https://www.youtube-nocookie.com/embed/{{ youtube_slider }}?autoplay=1&disablekb=1&fs=0&controls=0&loop=1&showinfo=0&rel=0&mute=1&modestbranding=1&playlist={{ youtube_slider }}"
+                    frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </div>
+    {% elseif image_slider %}
+        {% for item in post.get_field('home_slider') %}
+            <div class="content" style="background-color: {{ item.color }};">
+                {% if item.title or item.description or item.link %}
+                    <div class="desc">
+                        <div class="details">
+                            <h2 style="color: {{ item.title_color }};">{{ item.title }}</h2>
+                            {% if item.description %}
+                                <div class="content-desc" style="color: {{ item.text_color }};">
+                                    {{ item.description }}
+                                </div>
+                            {% endif %}
+                            {% if item.link %}
+                                <div class="link">
+                                    <a href="{{ item.link['url'] }}"
+                                       target="{{ item.link['target'] }}" class="button"  style="background-color: {{ item.button_color }}; color : {{ item.text_button_color }}">
+                                        {% if item.link['title'] %}
+                                            {{ item.link['title'] }}
+                                        {% else %}
+                                            {{ __('En savoir +', 'gosselink') }}
+                                        {% endif %}
+                                    </a>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endif %}
+                <div class="img-container{% if item.img_style != 'cover' %} contain{% endif %}{% if item.position != 'top' %} bottom{% else %} top{% endif %}">                    
+                    <picture class="picture">
+                        <source srcset="{{ TimberImage(item.image).src|towebp }}" type="image/webp">
+                        <source srcset="{{ TimberImage(item.image).src|tojpg }}" type="image/jpeg">
+                        <img src="{{ TimberImage(item.image).src }}" alt="{{ item.image.alt }}">
+                    </picture>                    
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+</div>
+
+
+
+
+

@@ -1,0 +1,15 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    {% include 'partials/top-intro.twig' %}
+
+    <section class="full-width relative">
+
+        <div class="flexible-content relative container">
+            {{ post.content }}
+        </div>
+
+        {% include 'partials/bottom-blocks.twig' %}
+    </section>
+
+{% endblock %}

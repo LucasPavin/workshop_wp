@@ -1,0 +1,52 @@
+{#
+Title: Frise chronologique
+Description: Permet d'insérer une frise chronologique.
+Category: Contenu du flexible
+Icon: slides
+Keywords: gosselink timeline frise historique
+#}
+
+{% set flexi_timeline_block = function('get_field', 'timeline_block') %}
+
+<div class="gk-timeline">
+        <div class="top"></div>
+    <div class="cd-container">
+        {% for item in flexi_timeline_block %}
+            <div class="cd-timeline-block">
+                <div class="cd-timeline-content">
+                    {% if item.big_title %}
+                        <div class="timeline-title-block">
+                            {% if item.big_title %}
+                                <h3 class="title" style="color: {{ item.color }}">{{ item.big_title }}</h3>
+                            {% endif %}
+
+                            {% if item.big_subtitle %}
+                                <h4 class="subtitle">{{ item.big_subtitle }}</h4>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                    <div class="description">
+                        <div class="dashed">
+                            <div class="hexagon-icon">
+
+                            </div>
+                        </div>
+                        <div class="cd-timeline-img cd-picture" style="background-color: {{ item.color }}">
+                            {% if item.dated %}
+                                {{ item.dated }}
+                            {% endif %}
+                        </div>
+                        {{ item.event }}
+                    </div>
+                    {% if item.event_image %}
+                        <img src="{{ TimberImage(item.event_image) }}" alt="{{ item.event_image.alt }}">
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+{#        <div class="logo-timeline">#}
+{#            <img src="{{ assets }}images/logo.svg" alt="">#}
+{#        </div>#}
+    </div>
+    <div class="bottom"></div>
+</div>

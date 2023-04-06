@@ -1,0 +1,49 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+    {% include 'partials/homepage-slider.twig' %}
+
+    <section id="home" class="full-width-container">
+
+        <div class="flexible-content relative">
+            {{ post.content }}
+        </div>
+
+        <div class="homepage-blog">
+            <div class="container">
+                <h2>{{ __('Blog', 'gosselink') }}</h2>
+                <div class="posts-home">
+                    {% for post in posts %}
+                        {% include 'templates/blog/list-post-default.twig' %}
+                    {% endfor %}
+                </div>
+                <div class="centered">
+                    <a href="{{ post_link("actualites") }}"
+                       class="btn main-color-1">{{ __('Découvrir plus d\'infos', 'gosselink') }}</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-bottom bg-main-color-1">
+            <div class="container">
+                <h2>Contact</h2>
+                <h3>Talk to us about new work</h3>
+                <p>
+                    Our core clients are from the Europe countries, but we are happy to work with clients from all over
+                    the globe.
+                </p>
+                
+                <div>
+                    {% include 'partials/social-media.twig' %}
+                </div>
+            </div>
+        </div>
+
+        {# <h2>{{ __('Popup', 'gosselink') }}</h2> #}
+        {# <a class="open-popup btn black" data-post-id="8" href="#popup">Open Sample page</a> #}
+        {# <div class="open-popup btn black" data-post-id="3">Open Privacy page</div> #}
+
+    </section>
+
+{% endblock %}

@@ -1,0 +1,68 @@
+@mixin object-fit($fit: fill, $position: null){
+  -o-object-fit: $fit;
+  object-fit: $fit;
+  @if $position {
+    -o-object-position: $position;
+    object-position: $position;
+    font-family: 'object-fit: #{$fit}; object-position: #{$position}';
+  } @else {
+    font-family: 'object-fit: #{$fit}';
+  }
+}
+
+@mixin vertical-center() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin pseudo() {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+@mixin transition() {
+  transition: all 500ms ease-in-out;
+}
+
+@mixin skew() {
+  transform: skew(0deg, -2deg);
+}
+
+@mixin overbg() {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: 0;
+  top: 0;
+  left: calc(-50vw + 50%);
+  width: 100vw;
+  z-index: -1;
+}
+
+$breakpoints: (
+        'small': (min-width: 680px),
+        'medium': (min-width: 990px),
+        'large': (min-width: 1024px),
+        'xlarge': (min-width: 1200px)
+) !default;
+
+@mixin respond-to($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  }
+
+    // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}

@@ -1,0 +1,16 @@
+{#
+Title: EcoVideo
+Description: Appelle une vidéo de façon plus eco-friendly
+Category: Contenu du flexible
+Icon: format-video
+Keywords: gosselink download telechargement téléchargement
+#}
+
+{% set flexi_eco_video = function('get_field', 'eco_video') %}
+{% set flexi_eco_miniature = function('get_field', 'eco_miniature') %}
+
+
+<div class="eco-video" data-id="{{ flexi_eco_video }}" id='{{ block['id'] }}' >
+    {{ gk_image(TimberImage(flexi_eco_miniature)) }}
+    <button class="play"><img src="{{ parent.assets }}images/play.svg" alt="bouton play"></button>
+</div>

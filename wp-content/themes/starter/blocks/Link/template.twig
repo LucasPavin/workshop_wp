@@ -1,0 +1,26 @@
+{#
+Title: Bloc lien
+Description: Permet d'insérer un ou plusieurs liens.
+Category: Contenu du flexible
+Icon: admin-links
+Keywords: gosselink link lien
+#}
+
+{% set flexi_link = function('get_field', 'link') %}
+
+<div class="gk-links" id='{{ block['id'] }}'>
+    {% for item in flexi_link %}
+        <div class="links-block">
+            {% if  item.img_link %}
+                <div class="img-container">
+                    <img src="{{ TimberImage(item.img_link).src }}" alt="{{ item.img_link.alt }}">
+                </div>
+            {% endif %}
+
+            <a href="{{ item.url_link }}" {% if item.target is not empty %} target="_blank" {% endif %}
+               class="">
+                {{ item.link_title }}
+            </a>
+        </div>
+    {% endfor %}
+</div>

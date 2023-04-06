@@ -1,0 +1,57 @@
+{#
+Title: Conteneur
+Description: Ajoute un bloc autour d'autres blocs
+Category: Contenu du flexible
+Icon: layout
+Keywords: gosselink wrapper layout
+Type: wrapper
+#}
+
+{% set enabled = function('get_field', 'enabled') %}
+{% set width = function('get_field', 'width') %}
+{% set background = function('get_field', 'background') %}
+
+{% set admin_classes = "" %}
+{% if enabled is not defined or not enabled %}
+    {% set admin_classes = " block-disabled " %}
+{% endif %}
+
+{% if (enabled is not defined or enabled) or function('is_admin') %}
+    {% if background and background == 'image' %}
+
+        {% set image = function('get_field', 'image') %}
+        {% set effect = function('get_field', 'effect') %}
+
+        <div class="gk-wrapper gk-wrapper-bg{{ admin_classes }} {{ effect }} {{ width != 'full' ? 'container' : '' }} {{ block.className }}"
+             style="background-image: url({{ image.url }});">
+            {% if width == 'full' %}
+                <div class="container">
+                    <InnerBlocks/>
+                </div>
+            {% else %}
+                <InnerBlocks/>
+            {% endif %}
+        </div>
+
+    {% elseif background and background == 'color' %}
+
+        {% set color_class = function('get_field', 'color') %}
+
+        <div class="gk-wrapper{{ admin_classes }} {{ color_class }} {{ width != 'full' ? 'container' : '' }} {{ block.className }}">
+            {% if width == 'full' %}
+                <div class="container">
+                    <InnerBlocks/>
+                </div>
+            {% else %}
+                <InnerBlocks/>
+            {% endif %}
+        </div>
+
+    {% else %}
+
+        <div class="gk-wrapper{{ admin_classes }} {{ width != 'full' ? 'container' : '' }} {{ block.className }} no-bg">
+            <InnerBlocks/>
+        </div>
+
+    {% endif %}
+{% endif %}

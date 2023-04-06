@@ -1,0 +1,48 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+    {% include 'partials/top-intro.twig' %}
+
+    <section class="full-width-container">
+        <div class="container">
+            <div class="page-wrapper grid-layout">
+                <div class="list-post-blog">
+                    {% for post in posts %}
+                        {% include 'blog/list-post-' ~ (post.format == '' ? 'default' : post.format) ~ '.twig' %}
+                    {% endfor %}
+
+                    {% include 'partials/pagination.twig' %}
+                </div>
+
+                {% if sidebar %}
+                    <aside>
+                        {{ sidebar }}
+                    </aside>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="bottom-content">
+            {% set block = options.first_bottom_block %}
+            <div class="block-more first-block" style="background-color: {{ block.color }}">
+                {% if block.title %}
+                    <h3>
+                        {{ block.title }}
+                    </h3>
+                {% endif %}
+                {% if block.description %}
+                    <div class="desc">
+                        {{ block.description|wpautop }}
+                    </div>
+                {% endif %}
+                {% if block.link %}
+                    <a href="{{ block.link.url }}" target="{{ block.link.target }}" class="button underline white">
+                        {{ block.link.title }}
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

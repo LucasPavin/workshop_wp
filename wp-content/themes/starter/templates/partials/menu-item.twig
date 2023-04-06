@@ -1,0 +1,13 @@
+<li class="{{ item.classes | join(' ') | replace({'open-popup': ''}) }}">
+    {% set menu_link = item.link %}
+
+    {% if 'open-popup' in item.classes %}
+            <a class="open-popup" target="{{ item.target }}" data-post-id="{{ item.master_object.ID }}">{{ item.title }}</a>
+    {% else %}
+            <a target="{{ item.target }}" href="{{ menu_link }}" {% if item.get_children %}aria-haspopup="true"{% endif %}>{{ item.title }}</a>
+    {% endif %}
+
+    {% if item.get_children %}
+        {% include "partials/menu.twig" with {'menu': item.get_children, 'submenu': true} %}
+    {% endif %}
+</li>

@@ -1,0 +1,29 @@
+<div class="intro">
+    <div class="bg-intro">
+        {% if post.get_thumbnail %}
+            <img src="{{ post.thumbnail.src }}" alt="">
+        {% else %}
+            <img src="{{ parent.assets }}images/bg-default.jpg" alt="">
+        {% endif %}
+    </div>
+
+    <div class="bottom-intro">
+        <div class="container">
+            {% if post.post_type != 'product' %}
+                {% if title %}
+                    <h1>
+                        {{ title }}
+                    </h1>
+                {% elseif post.post_title %}
+                    <h1>
+                        {{ post.post_title }}
+                    </h1>
+                {% endif %}
+            {% endif %}
+
+            <div class="breadcrumbs">
+                {{ function('yoast_breadcrumb', '<nav id="breadcrumbs" class="main-breadcrumbs">','</nav>', false ) }}
+            </div>
+        </div>
+    </div>
+</div>

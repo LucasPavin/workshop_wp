@@ -1,0 +1,51 @@
+{% include 'partials/searchform.twig' %}
+
+{# Scroll Top #}
+{% if options.scroll_top_enabled %}
+    <a href="#{{top_anchor}}" class="scrolltop">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+            <path d="M24 15.878L20 20l-8-8-8 8-4-4.122L12 4l12 11.878z"/>
+        </svg>
+    </a>
+{% endif %}
+
+{# Popup container #}
+<div id="popup" class="popup">
+    <div class="popup-content">
+    </div>
+</div>
+
+{# Footer Menu if enabled #}
+{% if options.footer_menu_enabled %}
+    <div class="grid-container">
+
+        <ul id="footer-menu" class="menu align-center">
+            {% for item in footer_menu.items %}
+                {% include "partials/menu-item.twig" with {'item': item} %}
+            {% endfor %}
+        </ul>
+
+        <ul id="footer-menu-2" class="menu">
+            {% for item in footer_menu_2.items %}
+                {% include "partials/menu-item.twig" with {'item': item} %}
+            {% endfor %}
+        </ul>
+
+        <ul id="footer-menu-3" class="menu">
+            {% for item in footer_menu_3.items %}
+                {% include "partials/menu-item.twig" with {'item': item} %}
+            {% endfor %}
+        </ul>
+
+        <ul id="footer-menu-4" class="menu">
+            {% for item in footer_menu_4.items %}
+                {% include "partials/menu-item.twig" with {'item': item} %}
+            {% endfor %}
+        </ul>
+
+    </div>
+{% endif %}
+
+<div class="grid-container">
+    <div class="text-center">Copyright {{"now"|date('Y')}} - Création <a href="https://www.gosselink.fr" target="_blank">Gosselink</a> - <a id="accessconfig" data-accessconfig-buttonname="Paramètres d’accessibilité" data-accessconfig-params='{ "Prefix" : "a42-ac", "ContainerClass" : "","ModalCloseButton" : "","ModalTitle" : "","FormFieldset" : "","FormFieldsetLegend" : "","FormRadio" : ""}' ></a></div>
+</div>

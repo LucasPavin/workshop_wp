@@ -1,0 +1,42 @@
+/* YOUR OWN VARS THERE */
+@import 'global/vars';
+@import 'global/mixins';
+@import 'global/colors';
+@import 'global/button';
+@import 'global/fonts';
+
+/* Blocks */
+//@import "../../blocks/**/styles.scss";
+@import "../../blocks/AccordionTabs/styles.scss";
+@import "../../blocks/Download/styles.scss";
+@import "../../blocks/Highlights/styles.scss";
+@import "../../blocks/link/styles.scss";
+@import "../../blocks/Separator/styles.scss";
+@import "../../blocks/SliderPage/styles.scss";
+@import "../../blocks/Timeline/styles.scss";
+@import "../../blocks/Wrapper/styles.scss";
+@import "../../blocks/EcoVideo/styles.scss";
+//@import "../../../starter_child/blocks/TempBlockChild/styles.scss"; // Used for demo. To be deleted
+
+/* Libs */
+// @import "~flickity/css/flickity.css";
+// @import "~select2/dist/css/select2.min.css";
+// Line Awesome can be used to have icon font : npm install line-awesome
+// @import "~line-awesome/dist/font-awesome-line-awesome/css/all.css";
+// @import "~line-awesome/dist/line-awesome/css/line-awesome.min.css";
+
+/* YOUR OWN STYLESHEETS GO HERE */
+@import 'layout/body';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/home-slider';
+@import 'layout/store-locator';
+@import 'templates/form';
+@import 'templates/contact';
+@import 'templates/blog';
+@import 'templates/blocks';
+@import 'templates/search';
+@import 'library/scroll';
+
+/* OPTIONNAL STYLES (disable if not needed) */
+@import 'templates/woocommerce';

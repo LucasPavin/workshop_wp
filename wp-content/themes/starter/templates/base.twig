@@ -1,0 +1,53 @@
+{% block html_head_container %}
+
+    {% include 'partials/head.twig' %}
+    {% block head %}
+    {% endblock %}
+    </head>
+{% endblock %}
+
+{% block body_start %}
+<body id="{{ top_anchor }}" class="{{ body_class }} {{ theme.slug }}" data-template="base.twig">
+{% if options.gtm_enabled %}
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id={{ options.gtm_id }}"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+{% endif %}
+
+{% endblock %}
+
+{% block header %}
+    {% include 'partials/header.twig' %}
+{% endblock %}
+
+<main>
+    <section id="content" role="main" class="content-wrapper">
+        {% block content %}
+            Sorry, no content
+        {% endblock %}
+    </section>
+</main>
+
+{% block footer %}
+    <footer id="footer">
+        {% include 'partials/footer.twig' %}
+    </footer>
+
+    {# Footer JS #}
+    {{ options.footer_js|raw }}
+
+    {# Google Analytics #}
+    {% if options.ga_enabled and options.ga_id != '' %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ options.ga_id }}"></script>
+    {% endif %}
+
+    {{ function('wp_footer') }}
+{% endblock %}
+
+{% block page_end%}
+</body>
+    </html>
+{% endblock %}

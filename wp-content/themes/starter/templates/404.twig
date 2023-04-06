@@ -1,0 +1,26 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	{% include 'partials/top-intro.twig' %}
+
+	<div class="full-width-container">
+		<div class="page-wrapper">
+			<div class="container">
+				<h1 class="error-404">{{ __('Page introuvable', 'gosselink') }}</h1>
+				<p>{{ __('La page demandée n\'est pas accessible ou n\'existe plus, veuillez nous excuser','gosselink', 'gosselink') }}</p>
+				{% if options.error_links %}
+					<div class="error-404_links">
+						<h2>{{ __('Vous cherchez peut-être :') }}</h2>
+						<ul>
+							{% for link in options.error_links %}
+								<li><a href="{{ link.link.url }}" target="{{ link.link.target }}">{{ link.link.title }}</a></li>
+							{% endfor %}
+						</ul>
+					</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
+

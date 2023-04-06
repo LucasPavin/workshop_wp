@@ -1,0 +1,21 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+	<section class="content-wrapper">
+
+		<div class="grid-container">
+
+			<h1 class="h1">{{post.post_title}}</h1>		
+
+			<div class="page-content">
+				{{function('do_shortcode', post.post_content)}}
+
+				{% include "partials/sitemap-menu.twig" with {'menu': sitemap_menu.get_items} %}
+			</div>
+
+		</div>
+
+	</section>
+
+{% endblock %}

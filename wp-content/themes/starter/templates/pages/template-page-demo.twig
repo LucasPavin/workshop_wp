@@ -1,0 +1,81 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+    {% include 'partials/top-intro.twig' %}
+    <h2>Listes & puces</h2>
+
+    <ul>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+        <li>Architecto eos id iste neque, qui rerum!</li>
+        <li>Deleniti facilis maiores necessitatibus sapiente soluta veniam!</li>
+        <li>Adipisci doloremque ex in, minus officiis sunt.</li>
+        <li>Aliquam iste itaque labore placeat qui repellat.</li>
+    </ul>
+
+    <hr>
+
+    <h2>Blockquote</h2>
+
+    <blockquote>
+        <p>
+            World belongs to humanity, not this leader, that leader or that king or prince or religious leader.
+            World belongs to humanity.
+            <br><cite>HIS HOLINESS the DALAI LAMA</cite>
+        </p>
+    </blockquote>
+
+    <hr>
+
+    <h2>Table</h2>
+
+
+    <table cellspacing="0" summary="Table">
+        <tbody>
+        <tr>
+            <th>#</th>
+            <th>Column 1</th>
+            <th>Column 2</th>
+            <th>Column 3</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Row 1 cell 1</td>
+            <td>Row 1 cell 2</td>
+            <td>Row 1 cell 3</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Row 2 cell 1</td>
+            <td>Row 2 cell 2</td>
+            <td>Row 2 cell 3</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Row 3 cell 1</td>
+            <td>Row 3 cell 2</td>
+            <td>Row 3 cell 3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Row 4 cell 1</td>
+            <td>Row 4 cell 2</td>
+            <td>Row 4 cell 3</td>
+        </tr>
+        </tbody>
+    </table>
+
+
+    <h2>{{ __('Réseaux sociaux', 'gosselink') }}</h2>
+
+    {% include 'partials/social-media.twig' %}
+
+
+
+     <h2>Inputs & buttons</h2>
+     
+     <h2>{{ __('Popup', 'gosselink') }}</h2>
+     <a class="open-popup btn black" data-post-id="2" href="#popup">Open Sample page</a>
+     <div class="open-popup btn black" data-post-id="3">Open Privacy page</div>
+
+{% endblock %}

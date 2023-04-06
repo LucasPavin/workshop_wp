@@ -1,0 +1,99 @@
+footer {
+  position: relative;
+  overflow: hidden;
+  background: var(--black);
+  color: var(--white);
+  padding-top: 2rem;
+
+  .copyright {
+    background: rgba(var(--black-rgb), 0.4);
+    padding: 1rem;
+
+    a {
+      color: var(--white);
+    }
+  }
+
+  .footer-menu {
+    margin-bottom: 2rem;
+
+    a {
+      position: relative;
+      width: 100%;
+      display: inline-block;
+      text-align: center;
+      border: 2px solid var(--white);
+      padding: 1rem 2rem;
+      color: var(--white);
+    }
+  }  
+}
+
+.scrolltop {
+  position: absolute;
+  right: 15px;
+  bottom: 5px;
+  display: none;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  &.is-visible {    
+    display: block;
+  }
+  &.fade-out {
+    opacity: 1;
+  }
+  svg {
+    fill: var(--white);
+  }
+}
+
+#accessconfig{
+  button{
+    background: none;
+    color: var(--white);
+    font-family: $body-font;
+    border: none;
+    font-size: 0.9375rem;
+    cursor: pointer;
+  }
+}
+
+/* Popup */
+.popup {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease-out;
+  &:target, &.open {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    overflow-y: scroll;
+    height: 100%;
+  }
+  & > div.popup-content {
+    width: 100%;   
+    padding: 4em 2em;
+    background: white;
+  }
+  .close-button {
+    position: absolute;
+    z-index: 10;
+    right: .5em;
+    top: .5em;
+    width: auto;
+    background: var(--black);
+    color: var(--white);
+    text-align: center;
+    padding: .5em;
+    cursor: pointer;
+    display: block;
+    border: none;
+  }
+}

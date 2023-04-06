@@ -1,0 +1,25 @@
+// Option fields 
+.contact-infos {
+    ul {
+        margin: 0;
+        padding: 0;
+        li:before {
+            display: none;
+        }  
+    }
+}
+
+// Form Contact 7
+.wpcf7-form {
+    display: flex;
+    flex-direction: column;
+}
+
+// Google Maps
+.googlemap {
+    min-height: 400px;
+    .contact-map {
+        height: 100%;
+        min-height: 400px;
+    }
+}

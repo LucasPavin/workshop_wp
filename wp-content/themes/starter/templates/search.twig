@@ -1,0 +1,30 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+	{% include 'partials/top-intro.twig' %}
+
+	<section class="content-wrapper">
+		<div class="container">
+{#			<h1>{{ title }}</h1>#}
+
+			<h3>{{ posts.found_posts }} {{ _n('résultat','résultats', posts.found_posts, 'gosselink') }}</h3>
+
+			<ul class="search-results">
+				{% for item in posts %}
+					<li>
+						<a href="{{ item.link }}">
+							<h4>{{ item.title }}</h4>
+{#							{% if item.post_content|excerpt %}#}
+{#								<p>{{ item.post_content|excerpt(30) }}</p>#}
+{#							{% endif %}#}
+						</a>
+					</li>
+				{% endfor %}
+			</ul>
+
+			{% include 'partials/pagination.twig' %}
+		</div>
+	</section>
+
+{% endblock %}

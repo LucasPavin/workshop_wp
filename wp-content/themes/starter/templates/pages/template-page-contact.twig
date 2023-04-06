@@ -1,0 +1,93 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+    {% include 'partials/top-intro.twig' %}
+
+    <section class="full-width-container">
+        <div class="page-wrapper">
+            <div class="container">
+                <div class="contact-infos">
+                    <ul>
+                        {% if options.client_address %}
+                            <li>
+                                {{ options.client_address|wpautop }}<br><br>
+                            </li>
+                        {% endif %}
+                        {% if options.phone %}
+                            <li>
+                                {{ options.phone }}
+                            </li>
+                        {% endif %}
+                        {% if options.fax %}
+                            <li>
+                                {{ options.fax }}
+                            </li>
+                        {% endif %}
+                        {% if options.mail %}
+                            <li>
+                                <a href="mailto:{{ options.mail }}" class="button">
+                                    Nous contacter par mail
+                                </a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>                
+            </div>
+            <div class="container">
+                {{ post.content }}
+            </div>
+            {# Examples : listing item in each category #}
+            <div class="container">
+                {% for location in locations_sites %}
+                    <div class="address-block">
+                        <div class="content">
+                            <h4 class="title">
+                                {{ location.title }}
+                            </h4>
+                            <div class="desc">
+                                {{ location.content }}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="container">
+                {% for location in locations_filiales %}
+                    <div class="address-block">
+                        <div class="content">
+                            <h4 class="title">
+                                {{ location.title }}
+                            </h4>
+                            <div class="desc">
+                                {{ location.content }}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        {# <div class="store-locator-section">
+            {{ function('do_shortcode', '[gksl_map]') }}
+            {{ function('do_shortcode', '[gksl_infos]
+            [gksl_fields  field=post_title]
+            [gksl_fields field=logos class="logotypes1" sub_fields="image"]
+            [gksl_fields  field=phone label="Téléphone"]
+            [gksl_fields  field=email label="E-mail"]
+            [/gksl_infos]') }}
+        </div> #}
+
+        <div class="googlemap">
+            {% if options.googlemap_location %}
+                <div id="contact-map" class="contact-map" data-center-lat="{{ options.googlemap_location.lat }}"
+                     data-center-lng="{{ options.googlemap_location.lng }}">
+                    <div class="marker" data-lat="{{ options.googlemap_location.lat }}"
+                         data-lng="{{ options.googlemap_location.lng }}">
+                         <h1 style="color:white;">Welcome To Gosselink</h1>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </section>
+{% endblock %}

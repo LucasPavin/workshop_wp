@@ -1,0 +1,59 @@
+.btn, .wp-block-button__link {
+  display: inline-block;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  color: var(--white);
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: $radius;
+  @include transition;
+
+  &.black {
+    background-color: var(--black);
+
+    &:hover {
+      background-color: var(--main-color-01);
+      color: var(--white);
+    }
+  }
+
+  &.gray {
+    background-color: var(--gray);
+
+    &:hover {
+      background-color: var(--main-color-01);
+      color: var(--white);
+    }
+  }
+
+  &.primary {
+    background-color: var(--main-color-01);
+    color: var(--white);
+
+    &:hover {
+      background-color: var(--main-color-03);
+      color: var(--white);
+    }
+  }
+
+  &.secondary {
+    background-color: var(--main-color-02);
+    color: var(--white);
+
+    &:hover {
+      background-color: var(--main-color-03);
+      color: var(--white);
+    }
+  }
+
+  &.tertiary {
+    background-color: var(--main-color-03);
+    color: var(--white);
+
+    &:hover {
+      background-color: var(--main-color-02);
+      color: var(--white);
+    }
+  }
+}

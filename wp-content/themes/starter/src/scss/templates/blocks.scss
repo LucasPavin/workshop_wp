@@ -1,0 +1,54 @@
+.absolute-left, .absolute-gauche {
+  @media screen and (min-width: 64em) {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 49%;
+    max-width: unset !important;
+    //height: 100%;
+    transform: translateY(-50%);
+  }
+
+  img {
+    object-fit: cover;
+    object-position: center;
+    height: auto;
+    width: 100%;
+    border-radius: 0 10px 10px 0;
+  }
+
+  #gksl_map {
+    height: 100%;
+  }
+}
+
+.absolute-right, .absolute-droite {
+  @media screen and (min-width: 64em) {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 49%;
+    max-width: unset !important;
+    //height: 100%;
+    transform: translateY(-50%);
+  }
+
+  img {
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px 0 0 10px;
+  }
+
+  #gksl_map {
+    height: 100%;
+  }
+}
+
+.wp-block-image {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}

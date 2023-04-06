@@ -1,0 +1,43 @@
+{#
+Title: Chiffres clés ou valeurs
+Description: Permet de mettre en avant un chiffre ou une valeur.
+Category: Contenu du flexible
+Icon: star-empty
+Keywords: gosselink mise en lumière highlights
+#}
+
+{% set flexi_key_number = function('get_field', 'key_number') %}
+<section class="gk-highlights" id='{{ block['id'] }}'>
+    {% for item in flexi_key_number %}
+        <div class="numbers-key">
+            {% if item.choice is empty %}
+                <div class="infos">
+                    <div class="count">
+                        <div class="keys">
+                            {{ item.number }}
+                        </div>
+                    </div>
+                </div>
+                <div class="extension">
+                    {% if item.extension %}
+                        {{ item.extension }}
+                    {% endif %}
+                </div>
+                <div class="details">
+                    {% if item.detail %}
+                        {{ item.detail }}
+                    {% endif %}
+                </div>
+            {% else %}
+                <div class="image">
+                    <img src="{{ TimberImage(item.icon).src }}" alt="{{ item.icon.alt }}"/>
+                </div>
+                <div class="details">
+                    {% if item.detail %}
+                        {{ item.detail }}
+                    {% endif %}
+                </div>
+            {% endif %}
+        </div>
+    {% endfor %}
+</section>

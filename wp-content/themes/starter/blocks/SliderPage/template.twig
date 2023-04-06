@@ -1,0 +1,57 @@
+{#
+Title: Slider
+Description: Permet d'insérer un diaporama de photo dans la page.
+Category: Contenu du flexible
+Icon: format-gallery
+Keywords: gosselink slider
+#}
+
+{% set slides = function('get_field', 'field_gk_slider_slider') %}
+{% set nbSlides = function('get_field', 'field_gk_slides_to_show') %}
+
+{# On ne peut pas afficher + de slides qu'il n'y en a ... #}
+{% if nbSlides >= slides|length %}
+    {% set nbSlides = slides|length - 1 %}
+{% endif %}
+
+{% set options = {
+    "prevNextButtons": false,
+    "pageDots": true,
+    "wrapAround": false,
+    "lazyLoad": true,
+    "cellAlign": left,
+    "contain": true,
+} %}
+
+<div class='gk-slider nb-slides-{{ nbSlides }}' id='{{ block['id'] }}' data-flickity='{{ options|json_encode }}'>
+    {% for item in slides %}
+        <div {% if item.image %} class="slide" {% else %} class="simple-slide" {% endif %}>
+            {% if item.image %}
+                <div class="img-content-slider">
+                    <img src="{{ TimberImage(item.image).src }}" alt="{{ item.image.alt }}">
+                </div>
+            {% endif %}
+
+            <div class="desc">
+                {% if item.title or item.description or item.link %}
+                    <div class="details">
+                        <h2>{{ item.title }}</h2>
+                        {{ item.description|wpautop }}
+                        {% if item.link %}
+                            <div class="link">
+                                <a href="{{ item.link['url'] }}"
+                                   target="{{ item.link['target'] }}" class="button">
+                                    {% if item.link['title'] %}
+                                        {{ item.link['title'] }}
+                                    {% else %}
+                                        {{ __('En savoir +', 'gosselink') }}
+                                    {% endif %}
+                                </a>
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+</div>

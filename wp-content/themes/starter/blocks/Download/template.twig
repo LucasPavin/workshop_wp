@@ -1,0 +1,19 @@
+{#
+Title: Bloc de téléchargement
+Description: Permet d'insérer un ou plusieurs blocs de téléchargement.
+Category: Contenu du flexible
+Icon: download
+Keywords: gosselink download telechargement téléchargement
+#}
+
+{% set flexi_download = function('get_field', 'download') %}
+
+<div class="gk-downloads">
+    {% for item in flexi_download %}
+        <div class="download-block">
+            <a href="{{ item.doc_link }}" target="_blank" class="button download">
+                {{ item.doc_title }}
+            </a>
+        </div>
+    {% endfor %}
+</div>

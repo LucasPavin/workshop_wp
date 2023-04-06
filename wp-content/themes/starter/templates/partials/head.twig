@@ -1,0 +1,38 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js ie ie6 lt-ie9 lt-ie8 lt-ie7" {{ site.language_attributes }}> <![endif]-->
+<!--[if IE 7]><html class="no-js ie ie7 lt-ie9 lt-ie8" {{ site.language_attributes }}> <![endif]-->
+<!--[if IE 8]><html class="no-js ie ie8 lt-ie9" {{ site.language_attributes }}> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" {{ site.language_attributes }}> <!--<![endif]-->
+<head>
+    <meta charset="{{ site.charset }}" />
+    <title>{{ wp_title ? wp_title : site.name }}</title>
+
+    {# La Meta description est normalement positionnée par Yoast, plus besoin de l'ajouter ici. #}
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="author" href="{{ site.theme.link }}/humans.txt" />
+    <link rel="pingback" href="{{ site.pingback_url }}" />
+
+    {% if options.favicon %}
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ options.favicon.url|resize(144, 144) }}" />
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{ options.favicon.url|resize(152, 152) }}" />
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ options.favicon.url|resize(32, 32) }}" />
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ options.favicon.url|resize(16, 16) }}" />
+        <meta name="application-name" content="{{ site.name }}"/>
+        <meta name="msapplication-TileColor" content="#FFFFFF" />
+        <meta name="msapplication-TileImage" content="{{ options.favicon.url|resize(144, 144) }}" />
+    {% endif %}
+
+    {% if options.gtm_enabled %}
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','{{ options.gtm_id }}');</script>
+    <!-- End Google Tag Manager -—>
+    {% endif %}
+
+    {{function('wp_head')}}

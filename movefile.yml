@@ -1,0 +1,79 @@
+# Change parameters according to your project
+
+global:
+    sql_adapter: wpcli
+
+local:
+    vhost: http://localhost:8090
+    wordpress_path: "<%= Dir.pwd %>" # use an absolute path here
+
+    database:
+        name: starter
+        user: root
+        password: "root" # could be blank, so always use quotes around
+        host: localhost
+
+recette:
+    vhost: http://demo.gosselink.fr
+    wordpress_path: /var/www/demo.gosselink.fr
+
+    database:
+        name: starter
+        user: root
+        password: root
+        host: localhost
+
+    exclude:
+        - '__base/'
+        - 'cache/'
+        - '__elements/'
+        - '.git/'
+        - '.idea/'
+        - '.gitignore'
+        - 'readme.html'
+        - 'README.md'
+        - 'licence.txt'
+        - 'init.sh'
+        - 'wp-content/themes/starter/__base/'
+        - 'wp-content/themes/starter/cache/'
+        - 'wp-content/themes/starter/__elements/'
+        - 'wp-content/themes/starter/hooks/'
+        - 'wp-content/themes/starter/node_modules/'
+        - 'wp-content/themes/starter/src/'
+        - 'wp-content/themes/starter/.babelrc'
+        - 'wp-content/themes/starter/.git/'
+        - 'wp-content/themes/starter/.gitignore'
+        - 'wp-content/themes/starter/LICENSE'
+        - 'wp-content/themes/starter/composer.lock'
+        - 'wp-content/themes/starter/package.json'
+        - 'wp-content/themes/starter/package-lock.json'
+        - 'wp-content/themes/starter/postcss.config.js'
+        - 'wp-content/themes/starter/phpunit.xml'
+        - 'wp-content/themes/starter/README.md'
+        - 'wp-content/themes/starter/webpack.config.js'
+
+    ssh:
+        host: demo.gosselink.fr
+        user: gosselink
+        rsync_options: '--verbose --rsync-path="sudo rsync" --chmod=Du=rwx,Dgo=rx,Fu=rw,Fgo=r'
+
+    hooks:
+        push:
+            before:
+                - command: 'cd wp-content/themes/starter && composer install && npm install && npm run build'
+                  where: local
+                - command: 'git commit --amend --no-edit'
+                  where: local
+                - command: 'git push -f origin master'
+                  where: local
+
+    forbid:
+        push:
+            db: true
+            plugins: true
+            themes: false
+            languages: true
+            uploads: true
+            mu-plugins: true
+
+# Todo : PRODUCTION

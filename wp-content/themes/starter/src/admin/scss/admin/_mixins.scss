@@ -1,0 +1,54 @@
+/*
+ * Button mixin- creates 3d-ish button effect with correct
+ * highlights/shadows, based on a base color.
+ */
+@mixin button( $button-color, $text-color: #fff ) {
+	background: $button-color;
+	border-color: darken( $button-color, 10% ) darken( $button-color, 15% ) darken( $button-color, 15% );
+	color: $text-color;
+	box-shadow: 0 1px 0 darken( $button-color, 15% );
+	text-shadow: 0 -1px 1px darken( $button-color, 15% ),
+		1px 0 1px darken( $button-color, 15% ),
+		0 1px 1px darken( $button-color, 15% ),
+		-1px 0 1px darken( $button-color, 15% );
+
+	&:hover,
+	&:focus {
+		background: rgba( $button-color, .4);
+		border-color: rgba( $button-color, .8 );
+		color: $text-color;
+		box-shadow: 0 1px 0 rgba( $button-color, .8 );
+	}
+
+	&:focus {
+		box-shadow: inset 0 1px 0 $button-color,
+					0 0 2px 1px #33b3db;
+	}
+
+	&:active,
+	&.active,
+	&.active:focus,
+	&.active:hover {
+		background: rgba($button-color, .8);
+		border-color: rgba($button-color, .8 );
+	 	box-shadow: inset 0 2px 0 rgba($button-color, .7);
+	}
+
+	&[disabled],
+	&:disabled,
+	&.button-primary-disabled,
+	&.disabled {
+		color: var(--light-gray) !important;
+		background: var(--dark-gray) !important;
+		border-color: var(--dark-gray) !important;
+		text-shadow: none !important;
+	}
+
+	&.button-hero {
+		box-shadow: 0 2px 0 $button-color !important;
+		&:active {
+		 	box-shadow: inset 0 3px 0 $button-color !important;
+		}
+	}
+
+}

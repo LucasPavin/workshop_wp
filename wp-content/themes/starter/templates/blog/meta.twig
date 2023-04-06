@@ -1,0 +1,16 @@
+{% set categories = '' %}
+{% for category in post.categories %}
+
+    {% set categories = categories ~ '<a href="' ~ category.link ~ '" rel="follow">' ~ category.title ~ '</a>' %}
+
+    {% if not loop.last %}
+        {% set categories = categories ~ '' %}
+    {% endif %}
+
+{% endfor %}
+
+<div class="entry-meta">
+    <span class="identity">{{ __('Par', 'gosselink') }} {{ post.author.name }}</span>
+    <span class="category">{{ categories }}</span>
+    <span class="date">{{ post.date }}</span>
+</div>

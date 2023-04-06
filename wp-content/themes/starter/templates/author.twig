@@ -1,0 +1,19 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+	<div class="wrapper {{sidebar_class}}">
+        {% for post in posts %}
+            {% include ['partials/tease-'~post.post_type~'.twig', 'partials/tease.twig'] %}
+        {% endfor %}
+
+        {% include 'partials/pagination.twig' %}
+	</div>
+
+    {% if sidebar %}
+		<aside class="layout-sidebar">
+            {{sidebar}}
+		</aside>
+    {% endif %}
+
+{% endblock %}

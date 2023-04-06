@@ -1,0 +1,59 @@
+:root {
+    // General Colors 
+    --white: #fff;
+    --black: #000;
+    --black-rgb: #{hexToRGB(#000)};
+    --gray: #797C7F;
+    --light-gray: #f9f9f9;
+    --dark-gray: #212020;
+    --gray-rgb: #{hexToRGB(#797C7F)};
+    
+    //// Theme colors
+    --main-color-01: #ED6B39;
+    --main-color-02: #3845cf;
+    --main-color-03: #faa93f;
+
+    /// General colors    
+    --red: #ec5656;
+    --green: #35F7A3;
+    --blue: #5cd0f3;
+    --action: #666;
+    --action-rgb: #{hexToRGB(#666)};
+
+    /// Admin Colors
+    --gosselink-green: #11a09a;
+
+    --body-font: 'Josefin Sans', sans-serif;
+    --header-height: 90px;
+}
+    
+[data-theme="dark"] {
+    --white: #000;
+    --gray: #fff;
+    --black: #fff;
+    --black-rgb: #{hexToRGB(#ffffff)};
+}
+
+//// Height & width theme
+$header-height: 90px;
+$header-height-mobile: 100px;
+$height-top-intro: 500px;
+$width-container-header: 1440px;
+$width-container: 1200px;
+
+//// General vars theme
+$radius: 3px;
+
+//// Fonts theme
+$body-font: 'Roboto', sans-serif;
+$title-font: 'Molde', sans-serif;
+
+@function hexToRGB($hex) {
+    @return red($hex), green($hex), blue($hex);
+}
+
+$small: 36em; // 576px;
+$medium: 48em; // 768px;
+$large: 62em; // 992px;
+$xlarge: 75em; // 1200px;
+$xxlarge: 87.5em // 1400px;

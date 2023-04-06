@@ -1,0 +1,14 @@
+{% block content %}
+    <div class="full-bg">
+        <a href="#" class="close-popup"></a>
+        <div class="content-form-popup">
+            <form role="search" method="get" id="searchform" class="searchform" action="{{ site.link }}">
+                {# <label class="screen-reader-text" for="s">Search for:</label> #}
+                <input type="text" placeholder="Rechercher" value="" name="s" id="s"/>
+                <span class="button search">
+                <input type="submit" id="searchsubmit" value="Search"/>
+                </span>
+            </form>
+        </div>
+    </div>
+{% endblock %}

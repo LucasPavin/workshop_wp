@@ -1,0 +1,34 @@
+<article {{ fn('post_class', [classes, 'entry'] ) }}>
+
+    {{ timber_set_product(post) }}
+
+    <div class="product-teaser">
+
+        <div class="content">
+
+            {% do action('woocommerce_before_shop_loop_item_title') %}
+
+            <a href="{{ post.link }}">
+                <div class="img-block">
+                    {% if post.thumbnail %}
+                        {{ gk_image(post.thumbnail.src, post.name, '', true, "600px") }}
+                    {% else %}
+                        {{ gk_image(wc_placeholder_img, post.name, '', true, "600px") }}
+                    {% endif %}
+                </div>
+            </a>
+
+            {% if post.title %}
+                <h3 class="entry-title"><a href="{{ post.link }}">{{ post.title }}</a></h3>
+            {% else %}
+                <h3 class="entry-title"><a href="{{ post.link }}">{{ fn('the_title') }}</a></h3>
+            {% endif %}
+
+            {% do action( 'woocommerce_after_shop_loop_item_title' ) %}
+            {% do action( 'woocommerce_after_shop_loop_item' ) %}
+
+        </div>
+
+    </div>
+
+</article>

@@ -1,0 +1,46 @@
+@import '../../scss/global/vars';
+
+$base-color: #23282d;
+$text-color: #EEE;
+$icon-color: #AAA;
+
+@import 'admin/admin';
+
+/* LOGIN */
+body{
+  &.login{
+
+    h1{
+      a{
+        background-image: url('../../img/logo-gosselink.svg');
+        background-size: contain;
+        width: 320px;
+        height: 117px;
+      }
+    }
+
+    #login_error,
+    .message,
+    .success {
+      border-left: 4px solid var(--gosselink-green);
+    }
+
+    #backtoblog a:hover,
+    #nav a:hover,
+    h1 a:hover {
+      color: var(--gosselink-green);
+    }
+  }
+}
+
+/* WRAPPER PREVIEW */
+.gk-wrapper{
+  border: 3px solid var(--gosselink-green);
+  border-radius: 1rem;
+  padding:2rem;
+
+  &.block-disabled {
+    border: 3px solid var(--light-gray);
+    background: var(--gray);
+  }
+}

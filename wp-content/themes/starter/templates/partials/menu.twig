@@ -1,0 +1,33 @@
+{% if menu %}
+    {% if not submenu %}
+    <div class="primary-menu-container">
+        <ul class="menu-wrapper">
+    {% else %}
+        <ul class="sub-menu">
+    {% endif %}
+
+        {% for item in menu %}
+            <li class="nav-link {{ item.classes | join(' ') }}">
+
+                {% set menu_link = item.link %}
+
+                <a
+                    {% if item.get_children %}
+                        href="{{ menu_link }}" aria-haspopup="true" aria-expanded="false"
+                    {% else %}
+                        href="{{ menu_link }}"
+                    {% endif %}>
+                    {{ item.title }}</a>
+
+                {% if item.get_children %}
+                    {% include "partials/menu.twig" with {'menu': item.get_children, 'submenu': true} %}
+                {% endif %}
+            </li>
+        {% endfor %}
+         </ul>
+    {% if not submenu %}
+    </div>
+    {% endif %}
+
+
+{% endif %}

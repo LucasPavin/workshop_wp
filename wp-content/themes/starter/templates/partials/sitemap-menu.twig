@@ -1,0 +1,18 @@
+{% if menu %}
+	<ul>
+        {% for item in menu %}
+
+			<li class="{{ item.classes | join(' ') }}">
+
+				{% set menu_link = item.link %}
+				<a target="{{ item.target }}" href="{{ menu_link }}">{{ item.title }}</a>
+
+                {% if item.get_children %}
+                	{% include "partials/sitemap-menu.twig" with {'menu': item.get_children, 'submenu': true} %}
+				{% endif %}
+			</li>
+
+        {% endfor %}
+
+	</ul>
+{% endif %}
